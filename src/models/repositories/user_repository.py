@@ -25,6 +25,7 @@ class UserRepository:
             WHERE id = ?
             ''', (new_balance, user_id)
         )
+        self.__conn.commit()
         
     def get_user_by_username(self, username: str):
         cursor = self.__conn.cursor()
